@@ -1,6 +1,8 @@
 const http = require("http");
 const fs = require("fs");
 const url = require("url");
+require("dotenv").config();
+
 http
   .createServer(function (req, res) {
     const q = url.parse(req.url, true);
@@ -25,3 +27,5 @@ http
     });
   })
   .listen(8080);
+
+console.log(process.env.TEST);
